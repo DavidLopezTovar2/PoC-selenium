@@ -4,7 +4,7 @@
     <test verbose="2" preserve-order="true" name="/Users/davidlopez/Downloads/appiumScripts/PoC-selenium/PoC-selenium">
         <classes>
             <class name="test.LoginTest"/>
-
+            <class name="test.CreatePostTest"/>
         </classes>
     </test>
 </suite>

@@ -2,22 +2,12 @@ package test;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.LoginPage;
 
-public class LoginTest {
+public class LoginTest extends TestsDriver {
 
-    WebDriver driver;
-
-    @BeforeTest
-    public void setUp(){
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
-        driver = new ChromeDriver();
-    }
-
-    @Test
+    @Test()
     public void loginUser(){
         LoginPage loginPage = new LoginPage(driver);
         loginPage.getPage();
@@ -45,9 +35,12 @@ public class LoginTest {
 
     }
 
-    @AfterTest
-    public void quite(){
-        driver.close();
+    public static void loginUser(WebDriver driver){
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.getPage();
+        loginPage.setUserName("dadavivi88@hotmail.com");
+        loginPage.setPassword("Toolbar1997");
+        loginPage.login();
     }
 
 }
